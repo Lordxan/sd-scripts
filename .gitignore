@@ -4,3 +4,8 @@ wd14_tagger_model
 venv
 *.egg-info
 build
+image_dir
+reg_dir
+models
+output
+

@@ -1,0 +1,18 @@
+version: '3.3'
+services:
+  sd-train:
+    container_name: sd-train
+    build: .
+    environment:
+      - DISPLAY=$DISPLAY
+    volumes:
+      - '/tmp/.X11-unix:/tmp/.X11-unix'
+      - './image_dir:/train/image_dir'
+      - './reg_dir:/train/reg_dir'
+      - './models:/train/models'
+      - './output:/train/output'
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [ gpu ]
