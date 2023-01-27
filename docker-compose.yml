@@ -9,7 +9,7 @@ services:
       - '/tmp/.X11-unix:/tmp/.X11-unix'
       - './image_dir:/train/image_dir'
       - './reg_dir:/train/reg_dir'
-      - './models:/train/models'
+      - '${MODELS_DIR}:/train/models'
       - './output:/train/output'
     deploy:
       resources:
